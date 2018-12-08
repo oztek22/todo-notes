@@ -9,6 +9,7 @@ import { DataService } from '../../services/data.service';
 export class NotesComponent implements OnInit {
   addNote = false;
   editMode = false;
+  notesFilter = "all";
   notes = [];
   constructor(private dataService: DataService) {
     this.dataService.notes.subscribe((val) => {
@@ -47,6 +48,10 @@ export class NotesComponent implements OnInit {
       }
     });
     this.dataService.updateNote(this.notes);
+  }
+
+  updateNotesFilter(val) {
+    this.notesFilter = val;
   }
 
 }

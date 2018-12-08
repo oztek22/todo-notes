@@ -4,8 +4,8 @@
   </div>
   <div class="tabs_main_div" style="padding-top:45px;">
     <div class="all_notes_to_do_main_div">
-      <div class="each_tab selected_tab">All Notes</div>
-      <div class="each_tab ">To-Do's</div>
+      <div class="each_tab" [class.selected_tab]="notesFilter == 'all'" (click)="updateNotesFilter('all')">All Notes</div>
+      <div class="each_tab" [class.selected_tab]="notesFilter == 'todo'" (click)="updateNotesFilter('todo')">To-Do's</div>
     </div>
     <div class="add_note_text" (click)="showAddNote()">+ Add Note</div>
   </div>
@@ -18,7 +18,7 @@
         <div class="cursor-pointer" style="margin-left:1rem;" (click)="removeNotes()">Remove </div>
       </div>
     </div>
-    <div class="note_section_main_div" *ngFor="let note of notes">
+    <div class="note_section_main_div" *ngFor="let note of notes | notesFilter : notesFilter">
       <app-note [editMode]="editMode" [note]="note"></app-note>
     </div>
   </div>

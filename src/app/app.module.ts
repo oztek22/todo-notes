@@ -14,6 +14,7 @@ import { NoteComponent } from './components/notes/note/note.component';
 import { AddNoteComponent } from './components/notes/add-note/add-note.component';
 import { environment } from '../environments/environment';
 import { DateFormatterPipe } from './pipes/date-formatter.pipe';
+import { NotesFilterPipe } from './pipes/notes-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DateFormatterPipe } from './pipes/date-formatter.pipe';
     NotesComponent,
     NoteComponent,
     AddNoteComponent,
-    DateFormatterPipe
+    DateFormatterPipe,
+    NotesFilterPipe
   ],
   imports: [
     BrowserModule,
