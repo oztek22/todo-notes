@@ -15,7 +15,7 @@
       <div class="cursor-pointer" *ngIf="!editMode" (click)="changeEditMode(true)">Edit</div>
       <div class="edit_mode" *ngIf="editMode">
         <div class="cursor-pointer" (click)="changeEditMode(false)">Cancel </div>
-        <div class="cursor-pointer" style="margin-left:1rem;">Remove </div>
+        <div class="cursor-pointer" style="margin-left:1rem;" (click)="removeNotes()">Remove </div>
       </div>
     </div>
     <div class="note_section_main_div" *ngFor="let note of notes">
