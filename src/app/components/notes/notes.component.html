@@ -1,5 +1,26 @@
-<p>
-  notes works!
-</p>
-<app-note></app-note>
-<app-add-note></app-add-note>
+<div class="container">
+  <div class="notes_heading">
+    <span>Notes</span>
+  </div>
+  <div class="tabs_main_div" style="padding-top:45px;">
+    <div class="all_notes_to_do_main_div">
+      <div class="each_tab selected_tab">All Notes</div>
+      <div class="each_tab ">To-Do's</div>
+    </div>
+    <div class="add_note_text" (click)="showAddNote()">+ Add Note</div>
+  </div>
+  <div class="edit_main_div">
+    <div class="edit_heading_div">
+      <div class="add_note_mobile" (click)="showAddNote()" *ngIf="!editMode">+ Add Note</div>
+      <div class="cursor-pointer" *ngIf="!editMode" (click)="changeEditMode(true)">Edit</div>
+      <div class="edit_mode" *ngIf="editMode">
+        <div class="cursor-pointer" (click)="changeEditMode(false)">Cancel </div>
+        <div class="cursor-pointer" style="margin-left:1rem;">Remove </div>
+      </div>
+    </div>
+    <div class="note_section_main_div">
+      <app-note [editMode]="editMode"></app-note>
+    </div>
+  </div>
+  <app-add-note *ngIf="addNote" (closeAddNote)="closeAddNote()"></app-add-note>
+</div>

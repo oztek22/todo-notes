@@ -1,0 +1,106 @@
+
+.b-b{
+    border-bottom: 1px #a8a8a8 solid;
+}
+
+.container {
+    .cursor-pointer {
+        cursor: pointer;
+    }
+    .notes_heading {
+        width: 100%;
+        background: #000000;
+        text-align: center;
+        padding: 0.5rem;
+        color: #ffffff;
+        position: fixed;
+        width: 100%;
+
+    }
+    .tabs_main_div {
+        background: #f9f9f9;
+        border-bottom: thin #92a7b4 solid;
+        width: 100%;
+        display: flex;
+        .all_notes_to_do_main_div {
+            font-size: 0;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 10px 10px;
+            width: 100%;
+            .each_tab {
+               
+                font-size: 13px;
+                background: #ffffff;
+                color: #034561;
+                padding: 0.2rem 2rem;
+                cursor: pointer;
+                border: thin #034561 solid;
+                flex:1 1 auto;
+                text-align: center;
+            &.selected_tab {
+                background: #034561;
+                color: #ffffff
+            }
+            }
+        }
+        .add_note_text {
+            width: 49%;
+            display: none;
+            text-align: right;
+            color: #71a8c9;
+            font-size: 13px;
+            cursor: pointer;
+        }
+    }
+    .edit_main_div {
+        padding: 0.5rem;
+        .edit_heading_div {
+            background: #054662;
+            color: #ffffff;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            .add_note_mobile {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        .note_section_main_div {
+            padding: 0.5rem;
+            background: #f9f9f9;
+        }
+        .edit_mode {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 520px) {
+    .container {
+        .tabs_main_div {
+            .all_notes_to_do_main_div {
+                width: auto;
+            }
+            .add_note_text {
+                display: flex;
+                flex: 1 1 auto;
+                justify-content: flex-end;
+                padding-right: 10px;
+            }
+        }
+        .edit_main_div {
+            .edit_heading_div {
+                .add_note_mobile {
+                    display: none;
+                }
+            }
+            .edit_mode {
+                width: auto;
+            }
+        }
+    }
+}

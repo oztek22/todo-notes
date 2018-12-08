@@ -1,0 +1,89 @@
+.each_note_div {
+    .each_checkbox_div {
+        display: inline-block;
+        width: 3%;
+        
+        .form-group {
+            display: block;
+            
+        }
+        .form-group input {
+            padding: 0;
+            height: initial;
+            width: initial;
+            margin-bottom: 0;
+            display: none;
+            cursor: pointer;
+        }
+        .form-group label {
+            position: relative;
+            cursor: pointer;
+        }
+        .form-group label:before {
+            content: '';
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 2px solid #0079bf;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            padding: 7px;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .form-group input:checked+label:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 6px;
+            width: 4px;
+            height: 8px;
+            border: solid #0079bf;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+    .each_description_div {
+        border-bottom: thin #dddddd solid;
+        width: 100%;
+        display: flex;
+        padding: 0.8rem 0;
+        .description_wrapper {
+            flex: 1 1 auto;
+            display: flex;
+            
+        .to_do_section_box {
+            border: thin #5ca48e solid;
+            text-align: center;
+            vertical-align: top;
+            margin-right: 0.75rem;
+            flex: 0 0 70px;
+            .to_do_heading {
+                background: #5ca48e;
+                color: #ffffff;
+                font-size: 11px;
+                padding: 0.2rem;
+            }
+            .due_date_box {
+                background: #f9f9f9;
+                color: #5ca48e;
+                font-size: 11px;
+                padding: 0.2rem;
+            }
+        }
+        .note_description {
+            color: #3f3f3f;
+            font-size: 12px;
+            flex: 1 1 auto;
+        }
+        }
+        .due_date {
+            color: #a8a8a8;
+            font-size: 12px;
+            padding-right: 0.5rem;
+            flex: 0 0 40px;
+        }
+    }
+}
