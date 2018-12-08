@@ -18,8 +18,8 @@
         <div class="cursor-pointer" style="margin-left:1rem;">Remove </div>
       </div>
     </div>
-    <div class="note_section_main_div">
-      <app-note [editMode]="editMode"></app-note>
+    <div class="note_section_main_div" *ngFor="let note of notes">
+      <app-note [editMode]="editMode" [note]="note"></app-note>
     </div>
   </div>
   <app-add-note *ngIf="addNote" (closeAddNote)="closeAddNote()"></app-add-note>

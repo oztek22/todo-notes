@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-notes',
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class NotesComponent implements OnInit {
   addNote = false;
   editMode = false;
-  constructor() { }
+  notes = [];
+  constructor(private dataService: DataService) {
+    this.dataService.notes.subscribe((val) => {
+      if (val) {
+        console.log(val);
+        this.notes = val;
+      }
+    })
+  }
 
   ngOnInit() {
   }

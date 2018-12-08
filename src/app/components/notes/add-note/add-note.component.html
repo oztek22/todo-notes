@@ -1,13 +1,14 @@
 <div class="add_note_main_popup">
+  <div class="left_overlay"></div>
   <div class="add_note_main_popup_right_side_div">
     <div class="add_note_main_heading">
-      <span style="text-align:left">Add Note</span>
+      <span style="text-align:left;cursor:pointer;" (click)="AddNote()">Add Note</span>
       <span style="float:right;cursor:pointer;" (click)="closeEditor()">X</span>
       <span style="float:right; padding-right:0.85rem;">Done</span>
     </div>
     <div class="add_note_description_div">
       <div>
-        <textarea name="" id="" cols="30" rows="10" placeholder="Type Note"></textarea>
+        <textarea cols="30" rows="10" placeholder="Type Note" [(ngModel)]="noteData.label"></textarea>
       </div>
 
       <div class="b-b" style="padding: 0.4rem 0"></div>
@@ -17,17 +18,18 @@
         <span style="position: relative;top:3px;">To Do : </span>
         <span>
           <label class="switch">
-            <input type="checkbox" checked="">
+            <input type="checkbox" [(ngModel)]="noteData.isTodo">
             <span class="slider round"></span>
           </label>
 
         </span>
       </div>
 
-      <div class="due_date_text">
+      <div class="due_date_text" *ngIf="noteData.isTodo">
         <span>Due : </span>
-
-        <span style="color: #034561"> Tuesday, June 26</span>
+        <input [owlDateTimeTrigger]="dt" [owlDateTime]="dt" [(ngModel)]="noteData.dueDate">
+        <owl-date-time #dt></owl-date-time>
+        <!-- <span style="color: #034561"> Tuesday, June 26</span> -->
       </div>
 
     </div>

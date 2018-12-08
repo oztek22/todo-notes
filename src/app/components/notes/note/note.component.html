@@ -3,25 +3,25 @@
     <div class="description_wrapper">
       <div class="each_checkbox_div" *ngIf="editMode">
         <div class="form-group">
-          <input type="checkbox" id="javascript">
-          <label for="javascript"></label>
+          <input type="checkbox" [id]="note.createdAt" [(ngModel)]="note.isRemove">
+          <label [for]="note.createdAt"></label>
         </div>
       </div>
-      <div class="to_do_section_box">
+      <div class="to_do_section_box" *ngIf="note.isTodo && note.dueDate">
         <div class="to_do_heading">
           <span>To-Do</span>
         </div>
-        <div class="due_date_box"> Due 07/01</div>
+        <div class="due_date_box"> Due {{note?.dueDate | dateFormatter}}</div>
       </div>
       <div class="note_description">
         <span>
-          This is a note and the teacher has added some students to it.
+          {{note?.label}}
         </span>
       </div>
     </div>
     <div class="due_date">
       <span>
-        01/02
+        {{note?.createdAt | dateFormatter}}
       </span>
     </div>
   </div>
