@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:prod": "ng build --prod && cd dist && http-server -c-1",
+    "start:prod": "ng build --prod && cd dist/interview-task && http-server -c-1",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
