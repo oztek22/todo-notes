@@ -9,7 +9,7 @@ export class NotificationOldService {
   isSubscribed;
   subscription;
   applicationServerPublicKey =
-    "BFSQKa0ee8vBC-ZBT9zkBvilziX3AVf6K8e4rvyZFQkmFAdyeJiDx2np4oZ0bNoLDY9GoipH6iiPTavkbflBAsQ";
+    'BFSQKa0ee8vBC-ZBT9zkBvilziX3AVf6K8e4rvyZFQkmFAdyeJiDx2np4oZ0bNoLDY9GoipH6iiPTavkbflBAsQ';
   constructor() {
   }
 
@@ -26,12 +26,12 @@ export class NotificationOldService {
       this.isSubscribed = !(subscription === null);
 
       if (this.isSubscribed) {
-        console.log("User IS already subscribed.");
+        console.log('User IS already subscribed.');
         console.log(subscription);
         console.log(JSON.stringify(subscription));
         this.subscription = JSON.stringify(subscription);
       } else {
-        console.log("User is NOT subscribed.");
+        console.log('User is NOT subscribed.');
         this.subscribeUser();
       }
     });
@@ -44,7 +44,7 @@ export class NotificationOldService {
         userVisibleOnly: true
       })
       .then((subscription) => {
-        console.log("User is subscribed.");
+        console.log('User is subscribed.');
         console.log(subscription);
         console.log(JSON.stringify(subscription));
         // this.updateSubscriptionOnServer(subscription);
@@ -53,15 +53,15 @@ export class NotificationOldService {
 
       })
       .catch((err) => {
-        console.log("Failed to subscribe the user: ", err);
+        console.log('Failed to subscribe the user: ', err);
       });
   }
 
   urlB64ToUint8Array(base64String) {
-    const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+    const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
     const base64 = (base64String + padding)
-      .replace(/\-/g, "+")
-      .replace(/_/g, "/");
+      .replace(/\-/g, '+')
+      .replace(/_/g, '/');
 
     const rawData = window.atob(base64);
     const outputArray = new Uint8Array(rawData.length);

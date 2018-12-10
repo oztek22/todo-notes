@@ -9,11 +9,11 @@ import { DataService } from '../../../services/data.service';
 export class AddNoteComponent implements OnInit {
 
   noteData = {
-    label: "",
+    label: '',
     isTodo: false,
     createdAt: null,
     dueDate: null
-  }
+  };
   @Output()
   closeAddNote = new EventEmitter<any>();
   constructor(private dataService: DataService) { }
@@ -22,7 +22,7 @@ export class AddNoteComponent implements OnInit {
   }
 
   closeEditor() {
-    this.closeAddNote.emit()
+    this.closeAddNote.emit();
   }
 
   AddNote() {

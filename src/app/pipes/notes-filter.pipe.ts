@@ -6,12 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class NotesFilterPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if (args == 'all') {
+    if (args === 'all') {
       return value;
     }
     return value.filter((e) => {
-      return e.isTodo && e.dueDate
-    })
+      return e.isTodo && e.dueDate;
+    });
   }
 
 }
