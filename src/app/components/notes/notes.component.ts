@@ -54,7 +54,7 @@ export class NotesComponent implements OnInit {
             this.wait(2000);
           } else if (checkUpcomingtasks && newDate.getMonth() == current.getMonth() && newDate.getDate() == current.getDate() &&
             newDate.getHours() == current.getHours()) {
-            this.notificationService.sendNotification(element.label, "Task Will due within an Hour");
+            this.notificationService.sendNotification(element.label, "Task Will due within next Hour");
             this.wait(2000);
           }
         }
