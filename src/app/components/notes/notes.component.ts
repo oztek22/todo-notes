@@ -16,7 +16,6 @@ export class NotesComponent implements OnInit {
   constructor(private dataService: DataService, private notificationService: NotificationService) {
     this.dataService.notes.subscribe((val) => {
       if (val) {
-        console.log(val);
         this.notes = val;
       }
     })
@@ -27,7 +26,6 @@ export class NotesComponent implements OnInit {
     /**
      * This was setup for push Notification. we can use it If we want to use cron job
       navigator.serviceWorker.ready.then((registration) => {
-        console.log("registartionnnnn", registration)
         this.notificationService.initializedNotification(registration);
       });
     */
@@ -106,7 +104,6 @@ export class NotesComponent implements OnInit {
   }
 
   removeNotes() {
-    console.log(JSON.parse(JSON.stringify(this.notes)));
     this.notes = this.notes.filter((e) => {
       return !e.isRemove
     });

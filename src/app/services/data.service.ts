@@ -22,7 +22,6 @@ export class DataService {
   }
 
   addNote(note) {
-    console.log(this.notes.getValue())
     let current = this.notes.getValue();
     current.push(note);
     this.updateNote(current);

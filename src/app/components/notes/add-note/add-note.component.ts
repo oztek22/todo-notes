@@ -26,12 +26,10 @@ export class AddNoteComponent implements OnInit {
   }
 
   AddNote() {
-    console.log(this.noteData);
     if (!this.noteData.isTodo) {
       this.noteData.dueDate = null;
     }
     this.noteData.createdAt = new Date();
-    // console.log(this.noteData.dueDate.getTime())
     this.dataService.addNote(this.noteData);
     this.closeEditor();
   }

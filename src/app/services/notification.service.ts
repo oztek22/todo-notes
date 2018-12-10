@@ -7,7 +7,6 @@ export class NotificationService {
 
   initializeNotification() {
     if (!window['Notification']) {
-      console.log("This browser does not support notifications.");
     } else if (Notification['permission'] !== 'denied') {
       Notification.requestPermission(function (permission) { });
     }
