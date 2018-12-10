@@ -106,13 +106,12 @@ export class NotesComponent implements OnInit {
   }
 
   removeNotes() {
-    console.log(this.notes);
-    this.notes.forEach((element, index) => {
-      if (element.isRemove) {
-        this.notes.splice(index, 1);
-      }
+    console.log(JSON.parse(JSON.stringify(this.notes)));
+    this.notes = this.notes.filter((e) => {
+      return !e.isRemove
     });
     this.dataService.updateNote(this.notes);
+    this.editMode = false;
   }
 
   updateNotesFilter(val) {
